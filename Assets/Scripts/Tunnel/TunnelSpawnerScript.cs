@@ -6,8 +6,11 @@ public class TunnelSpawnerScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject TunnelPrefab;
+    [SerializeField]
+    private GameObject BufferPrefab;
 
     public List<GameObject> TunnelSegments;
+    public List<GameObject> BufferSegments;
 
 
     // Start is called before the first frame update
@@ -15,11 +18,11 @@ public class TunnelSpawnerScript : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            //newTunnel.GetComponent<TunnelBehaviour>().Spawner = this;
-            GameObject tunnel = Instantiate(TunnelPrefab, new Vector3(0, 10, -50 + i * 50), Quaternion.Euler(0, 0, 36 + Random.Range(0, 5) * 72));
-            tunnel.GetComponent<TunnelBehaviour>().Spawner = this;
-            TunnelSegments.Add(tunnel);
             
+
+            SpawnNewTunnel(-40 + i * 50);
+
+            SpawnNewBuffer(-50 + i * 50);
         }
     }
 
@@ -30,11 +33,24 @@ public class TunnelSpawnerScript : MonoBehaviour
     }
 
 
-    public void SpawnNewTunnel()
+    public void SpawnNewTunnel(float distance = 100)
     {
-        GameObject tunnel = Instantiate(TunnelPrefab, new Vector3(0, 10, 100), Quaternion.Euler(0,0, 36 + Random.Range(0,5) * 72));
-        tunnel.GetComponent<TunnelBehaviour>().Spawner = this;
+        GameObject tunnel = Instantiate(TunnelPrefab, new Vector3(0, 10, distance), Quaternion.Euler(0,0, 36));
+        TunnelBehaviour tunnelbehaviour = tunnel.GetComponent<TunnelBehaviour>();
+        tunnelbehaviour.Spawner = this;
+        tunnelbehaviour.TunnelType = TunnelType.Color;
         TunnelSegments.Add(tunnel);
+
+        
+    }
+
+    public void SpawnNewBuffer(float distance = 100)
+    {
+        GameObject buffer = Instantiate(BufferPrefab, new Vector3(0, 10, distance), Quaternion.Euler(0, 0, 36));
+        TunnelBehaviour tunnelbehaviour = buffer.GetComponent<TunnelBehaviour>();
+        tunnelbehaviour.Spawner = this;
+        tunnelbehaviour.TunnelType = TunnelType.Buffer;
+        BufferSegments.Add(buffer);
     }
 
 }

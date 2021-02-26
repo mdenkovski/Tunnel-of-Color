@@ -59,7 +59,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   Spawner: {fileID: 0}
-  Segments: []
+  Segments:
+  - {fileID: 6220968803730851899}
+  TunnelType: 0
 --- !u!1001 &3230439372509686188
 PrefabInstance:
   m_ObjectHideFlags: 0
