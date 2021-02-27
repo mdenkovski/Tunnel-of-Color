@@ -73,6 +73,9 @@ public class TunnelBehaviour : MonoBehaviour
         else if (TunnelType == TunnelType.Rotating)
         {
             UpdateAllSegments(SegmentType.White);
+            float roll = Random.Range(0.0f, 100.0f);
+
+            GetComponent<Animator>().SetInteger("Direction", roll < 50.0f ? -1 : 1);
         }
 
     }
