@@ -37,7 +37,8 @@ public class TunnelSpawnerScript : MonoBehaviour
 
             SpawnNewBuffer(-50 + i * 50);
         }
-        Random.InitState((int)Time.time);
+
+        Random.InitState(System.DateTime.Now.Millisecond);
     }
 
     
