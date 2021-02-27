@@ -16,6 +16,8 @@ public class PlayerBehavior : MonoBehaviour
     [Header("Tunnel")]
     [SerializeField]
     private TunnelSpawnerScript Spawner;
+    [SerializeField]
+    private Tunnelnput TunnelInput;
 
     [Header("Player Information")]
     private PlayerDetails PlayerDetails;
@@ -58,6 +60,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         IsAlive = false;
         Spawner.StopAllSegments();
+        TunnelInput.isRotating = false;
         Spawner.GetComponent<PlayerInput>().DeactivateInput();
         Animator.applyRootMotion = true;
         Animator.SetBool("IsDead", true);

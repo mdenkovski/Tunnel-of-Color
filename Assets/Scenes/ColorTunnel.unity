@@ -685,6 +685,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner: {fileID: 0}
+  rotationSpeed: 150
+  isRotating: 0
+  RotationDirection: 0
 --- !u!1 &1617403309
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,5 +895,13 @@ PrefabInstance:
       propertyPath: Spawner
       value: 
       objectReference: {fileID: 1502345671}
+    - target: {fileID: 6729120732666528468, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: Tunnelnput
+      value: 
+      objectReference: {fileID: 1502345673}
+    - target: {fileID: 6729120732666528468, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: TunnelInput
+      value: 
+      objectReference: {fileID: 1502345673}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}

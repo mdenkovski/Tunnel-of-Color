@@ -8,6 +8,12 @@ public class Tunnelnput : MonoBehaviour
     [SerializeField]
     private TunnelSpawnerScript Spawner;
 
+    [SerializeField]
+    private float rotationSpeed = 10;
+    public bool isRotating = false;
+    [SerializeField]
+    private int RotationDirection = 0;
+
     private void Start()
     {
         Spawner = gameObject.GetComponent<TunnelSpawnerScript>();
@@ -15,27 +21,43 @@ public class Tunnelnput : MonoBehaviour
 
     private void OnRotateTunnelRight(InputValue input)
     {
-        if (input.isPressed)
-        {
-            Debug.Log("Rotate Tunnel Right");
+        isRotating = input.isPressed;
 
-            foreach (GameObject Tunnel in Spawner.TunnelSegments)
-            {
-                Tunnel.transform.Rotate(0,0,72);
-            }
+        if (isRotating)
+        {
+            RotationDirection = 1;
         }
+        else
+        {
+            RotationDirection = 0;
+
+        }
+            Debug.Log("Rotate Tunnel Right");
     }
     private void OnRotateTunnelLeft(InputValue input)
     {
-        if (input.isPressed)
+        isRotating = input.isPressed;
+
+        if (isRotating)
+        {
+            RotationDirection = -1;
+        }
+        else
+        {
+            RotationDirection = 0;
+
+        }
+        Debug.Log("Rotate Tunnel Left");
+    }
+
+    private void Update()
+    {
+        if (isRotating)
         {
             foreach (GameObject Tunnel in Spawner.TunnelSegments)
             {
-                Tunnel.transform.Rotate(0, 0, -72);
+                Tunnel.transform.Rotate(0, 0, RotationDirection * rotationSpeed * Time.deltaTime);
             }
-            Debug.Log("Rotate Tunnel Left");
         }
     }
-
-
 }
