@@ -7,7 +7,7 @@ public class ColorChanger : MonoBehaviour
     [SerializeField]
     private SegmentType ColorApplied;
 
-   
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +16,7 @@ public class ColorChanger : MonoBehaviour
             PlayerDetails player = other.GetComponent<PlayerDetails>();
             player.ChangeTagetColor(ColorApplied);
             player.PlayParticleEffect();
-
+   
 
             Destroy(this.gameObject);
 

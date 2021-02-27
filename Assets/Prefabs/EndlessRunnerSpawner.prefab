@@ -53,7 +53,7 @@ MonoBehaviour:
   BufferSegments: []
   StartingGroupType: 4
   NumSegmentsSpawned: 0
-  SpeedIncreaseInterval: 10
+  DifficultyChangeInterval: 5
   TunnelSpeed: 10
   SpeedIncreaseAmount: 1
 --- !u!114 &6700656442924258978

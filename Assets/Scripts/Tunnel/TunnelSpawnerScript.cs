@@ -23,11 +23,13 @@ public class TunnelSpawnerScript : MonoBehaviour
     [SerializeField]
     private int NumSegmentsSpawned;
     [SerializeField]
-    private int SpeedIncreaseInterval;
+    private int DifficultyChangeInterval;
     [SerializeField]
     private float TunnelSpeed;
     [SerializeField]
     private float SpeedIncreaseAmount;
+
+    
 
 
     // Start is called before the first frame update
@@ -41,18 +43,35 @@ public class TunnelSpawnerScript : MonoBehaviour
         }
 
         Random.InitState(System.DateTime.Now.Millisecond);
+
     }
 
     
 
     public void SpawnNewTunnel(TunnelType newType, float distance = 100)
     {
+        //chose a random tunnel based on a probability
         if (newType == TunnelType.Random)
         {
-            //choose a rnadom type between the first color type and the second last type
-            newType = (TunnelType)Random.Range(1, (int)TunnelType.Random - 1);
+            float roll = Random.Range(0.0f, 100.0f);
+
+            if (roll < 10)
+            {
+                newType = TunnelType.Rotating;
+
+            }
+            else if (roll < 20)
+            {
+                newType = TunnelType.Obstacle;
+            }
+            else //color tunnel is the most often
+            {
+                newType = TunnelType.Color;
+            }
+
         }
 
+        //chose the prefab to spawn based on the new type
         GameObject prefabToSpawn;
         switch (newType)
         {
@@ -74,6 +93,7 @@ public class TunnelSpawnerScript : MonoBehaviour
                 break;
         }
 
+        //spawn in the new segment
         GameObject tunnel = Instantiate(prefabToSpawn, new Vector3(0, 10, distance), Quaternion.Euler(0,0, 36));
         TunnelBehaviour tunnelbehaviour = tunnel.GetComponent<TunnelBehaviour>();
         tunnelbehaviour.Spawner = this;
@@ -83,12 +103,11 @@ public class TunnelSpawnerScript : MonoBehaviour
 
         NumSegmentsSpawned++;
 
-        if (NumSegmentsSpawned >= SpeedIncreaseInterval)
+        if (NumSegmentsSpawned >= DifficultyChangeInterval)
         {
-            TunnelSpeed += 1;
-            IncreaseSpeed();
-            NumSegmentsSpawned = 0;
-            Debug.Log("Speed Increased");
+            IncreaseDifficulty();
+
+            
         }
     }
 
@@ -129,5 +148,12 @@ public class TunnelSpawnerScript : MonoBehaviour
         }
     }
 
+    private void IncreaseDifficulty()
+    {
+        TunnelSpeed += 1;
+        IncreaseSpeed();
+        NumSegmentsSpawned = 0;
+        Debug.Log("Speed Increased");
+    }
 
 }

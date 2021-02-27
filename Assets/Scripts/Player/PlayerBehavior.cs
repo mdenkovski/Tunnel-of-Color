@@ -23,6 +23,7 @@ public class PlayerBehavior : MonoBehaviour
     private PlayerDetails PlayerDetails;
     [SerializeField]
     private Animator Animator;
+    public AudioSource RunningSound;
 
     public bool IsAlive = true;
 
@@ -71,7 +72,7 @@ public class PlayerBehavior : MonoBehaviour
         Animator.SetBool("IsDead", true);
 
         GameOverCanvas.SetActive(true);
-
+        RunningSound.Stop();
 
     }
 
@@ -89,6 +90,7 @@ public class PlayerBehavior : MonoBehaviour
     private void OnPause(InputValue input)
     {
         Time.timeScale = 0;
+        RunningSound.Stop();
         PauseCanvas.SetActive(true);
     }
 

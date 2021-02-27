@@ -16,6 +16,8 @@ public class PlayerDetails : MonoBehaviour
     [SerializeField]
     private ParticleSystem PartcleEffect;
 
+    [SerializeField]
+    private AudioSource PowerupSound;
 
     private void Start()
     {
@@ -66,6 +68,7 @@ public class PlayerDetails : MonoBehaviour
     public void PlayParticleEffect()
     {
         PartcleEffect.Play();
+        PowerupSound.Play();
     }
 
 }
