@@ -32,7 +32,7 @@ public class Tunnelnput : MonoBehaviour
             RotationDirection = 0;
 
         }
-            Debug.Log("Rotate Tunnel Right");
+            //Debug.Log("Rotate Tunnel Right");
     }
     private void OnRotateTunnelLeft(InputValue input)
     {
@@ -47,7 +47,7 @@ public class Tunnelnput : MonoBehaviour
             RotationDirection = 0;
 
         }
-        Debug.Log("Rotate Tunnel Left");
+        //Debug.Log("Rotate Tunnel Left");
     }
 
     private void Update()
