@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1220065214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950443140168442537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f5e52aa9ab0a24b9dc3cf6cbb7a61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetSegment: 0
 --- !u!114 &6729120732666528468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,19 +29,6 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &1220065214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950443140168442537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18f5e52aa9ab0a24b9dc3cf6cbb7a61a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TargetSegment: 5
 --- !u!1 &2442778563355845553
 GameObject:
   m_ObjectHideFlags: 0

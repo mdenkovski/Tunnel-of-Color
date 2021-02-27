@@ -637,6 +637,10 @@ MonoBehaviour:
   BufferPrefab: {fileID: 8859738399174167122, guid: 2905e7cff376ca1429e190446de342a0, type: 3}
   TunnelSegments: []
   BufferSegments: []
+  NumSegmentsSpawned: 0
+  SpeedIncreaseInterval: 3
+  TunnelSpeed: 10
+  SpeedIncreaseAmount: 1
 --- !u!114 &1502345672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,7 +752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617403309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.00851, y: 32.68966, z: 21.7799}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -874,6 +878,14 @@ PrefabInstance:
     - target: {fileID: 5434314947043859150, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729120732666528468, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: Spawner
+      value: 
+      objectReference: {fileID: 1502345671}
+    - target: {fileID: 7870336982700325400, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}

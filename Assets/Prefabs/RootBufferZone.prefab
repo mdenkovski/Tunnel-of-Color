@@ -23,9 +23,9 @@ GameObject:
   m_Component:
   - component: {fileID: 345431079218173777}
   - component: {fileID: 8153838974958694112}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: RootBufferZone
-  m_TagString: TunnelSection
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,6 +62,7 @@ MonoBehaviour:
   Segments:
   - {fileID: 6220968803730851899}
   TunnelType: 0
+  IsActive: 1
 --- !u!1001 &3230439372509686188
 PrefabInstance:
   m_ObjectHideFlags: 0
