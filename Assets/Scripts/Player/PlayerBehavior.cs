@@ -26,6 +26,11 @@ public class PlayerBehavior : MonoBehaviour
 
     public bool IsAlive = true;
 
+    [SerializeField]
+    private GameObject PauseCanvas;
+    [SerializeField]
+    private GameObject GameOverCanvas;
+
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +69,10 @@ public class PlayerBehavior : MonoBehaviour
         Spawner.GetComponent<PlayerInput>().DeactivateInput();
         Animator.applyRootMotion = true;
         Animator.SetBool("IsDead", true);
-        
+
+        GameOverCanvas.SetActive(true);
+
+
     }
 
 
@@ -78,17 +86,13 @@ public class PlayerBehavior : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Obstacle"))
-    //    {
-    //        Debug.Log("Hit an Obstacle");
-    //        Death();
-    //    }
-
-    //}
+    private void OnPause(InputValue input)
+    {
+        Time.timeScale = 0;
+        PauseCanvas.SetActive(true);
+    }
 
 
-   
+
 
 }

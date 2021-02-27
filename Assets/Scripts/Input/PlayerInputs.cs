@@ -33,6 +33,14 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""d962f74f-5950-496b-920f-9fc1be7116d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -77,6 +85,28 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""RotateTunnelLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a15e79bb-cf26-43e7-a763-df13a9e7ae7d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c215da3-6b2b-4e4c-9bbc-adb6120506af"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -595,6 +625,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_EndlessRunner = asset.FindActionMap("EndlessRunner", throwIfNotFound: true);
         m_EndlessRunner_RotateTunnelRight = m_EndlessRunner.FindAction("RotateTunnelRight", throwIfNotFound: true);
         m_EndlessRunner_RotateTunnelLeft = m_EndlessRunner.FindAction("RotateTunnelLeft", throwIfNotFound: true);
+        m_EndlessRunner_Pause = m_EndlessRunner.FindAction("Pause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -658,12 +689,14 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private IEndlessRunnerActions m_EndlessRunnerActionsCallbackInterface;
     private readonly InputAction m_EndlessRunner_RotateTunnelRight;
     private readonly InputAction m_EndlessRunner_RotateTunnelLeft;
+    private readonly InputAction m_EndlessRunner_Pause;
     public struct EndlessRunnerActions
     {
         private @PlayerInputs m_Wrapper;
         public EndlessRunnerActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @RotateTunnelRight => m_Wrapper.m_EndlessRunner_RotateTunnelRight;
         public InputAction @RotateTunnelLeft => m_Wrapper.m_EndlessRunner_RotateTunnelLeft;
+        public InputAction @Pause => m_Wrapper.m_EndlessRunner_Pause;
         public InputActionMap Get() { return m_Wrapper.m_EndlessRunner; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -679,6 +712,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @RotateTunnelLeft.started -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnRotateTunnelLeft;
                 @RotateTunnelLeft.performed -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnRotateTunnelLeft;
                 @RotateTunnelLeft.canceled -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnRotateTunnelLeft;
+                @Pause.started -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_EndlessRunnerActionsCallbackInterface = instance;
             if (instance != null)
@@ -689,6 +725,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @RotateTunnelLeft.started += instance.OnRotateTunnelLeft;
                 @RotateTunnelLeft.performed += instance.OnRotateTunnelLeft;
                 @RotateTunnelLeft.canceled += instance.OnRotateTunnelLeft;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -802,6 +841,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     {
         void OnRotateTunnelRight(InputAction.CallbackContext context);
         void OnRotateTunnelLeft(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

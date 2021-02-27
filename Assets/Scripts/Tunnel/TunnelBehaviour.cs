@@ -85,14 +85,13 @@ public class TunnelBehaviour : MonoBehaviour
             if (TunnelType == TunnelType.Buffer) // a bufer tunnel
             {
                 Spawner.BufferSegments.Remove(this.gameObject);
-                Spawner.SpawnNewBuffer();
+                Spawner.SpawnNewBuffer(transform.position.z + 200);
                 Destroy(gameObject);
             }
             else /*(TunnelType == TunnelType.Color) // a regular tunnel*/
             {
                 Spawner.TunnelSegments.Remove(this.gameObject);
-                Spawner.SpawnNewTunnel(TunnelType.Random);
-                Destroy(gameObject);
+                Spawner.SpawnNewTunnel(TunnelType.Random, transform.position.z + 200);
                 Destroy(gameObject);
             }
 

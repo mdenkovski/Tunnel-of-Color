@@ -14,6 +14,9 @@ public class TunnelSpawnerScript : MonoBehaviour
     public List<GameObject> TunnelSegments;
     public List<GameObject> BufferSegments;
 
+    [SerializeField]
+    private TunnelType StartingGroupType;
+
     [Header("Tunnel Movement")]
     [SerializeField]
     private int NumSegmentsSpawned;
@@ -30,7 +33,7 @@ public class TunnelSpawnerScript : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            SpawnNewTunnel(TunnelType.White, -40 + i * 50);
+            SpawnNewTunnel(StartingGroupType, -40 + i * 50);
 
             SpawnNewBuffer(-50 + i * 50);
         }
