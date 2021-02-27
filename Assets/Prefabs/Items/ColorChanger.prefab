@@ -110,3 +110,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColorApplied: 5
+  ParticleEffect: {fileID: 1406054297980577462, guid: 3195a02cb4dd0c945ad5356d35c96c58, type: 3}

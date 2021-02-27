@@ -11,6 +11,9 @@ public class PlayerDetails : MonoBehaviour
     [SerializeField]
     private Image TargetColorImage;
 
+    [SerializeField]
+    private ParticleSystem PartcleEffect;
+
 
     private void Start()
     {
@@ -54,6 +57,12 @@ public class PlayerDetails : MonoBehaviour
         }
 
         TargetColorImage.color = ColorToUpdate;
+    }
+
+
+    public void PlayParticleEffect()
+    {
+        PartcleEffect.Play();
     }
 
 }

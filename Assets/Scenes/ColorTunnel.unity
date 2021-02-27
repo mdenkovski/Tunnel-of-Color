@@ -841,7 +841,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -50.77, y: -3.818, z: 3.765}
 --- !u!1 &467346878
 GameObject:
@@ -1957,7 +1957,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -3874,17 +3874,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1950443140168442537, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 2442778563355845553, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 2442778563355845553, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5434314947043859150, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
       propertyPath: m_RootOrder
@@ -3946,6 +3938,30 @@ PrefabInstance:
       propertyPath: GameOverCanvas
       value: 
       objectReference: {fileID: 976252942}
+    - target: {fileID: 7298886604744318753, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298886604744318755, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298886604744318757, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298886604744318759, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298886604744318761, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298886604744318763, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
 --- !u!1001 &6700656444425187178
@@ -3961,7 +3977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6700656442924258988, guid: b41372c063314e944a14014ba5b4e83d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6700656442924258988, guid: b41372c063314e944a14014ba5b4e83d, type: 3}
       propertyPath: m_LocalPosition.x
