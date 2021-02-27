@@ -47,12 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColorTunnelPrefab: {fileID: 767004725518939612, guid: 47fadb06eebb8924d8366c7de69a0b67, type: 3}
   ObstacleTunnelPrefab: {fileID: 1282017309857477852, guid: 8e9a7cf177caf92488646e2e16a6eaa1, type: 3}
+  RotatingTunnelPrefab: {fileID: 6017391798297179710, guid: 5ca41ac4ef70ce644a063beaedb6f0f0, type: 3}
   BufferPrefab: {fileID: 8859738399174167122, guid: 2905e7cff376ca1429e190446de342a0, type: 3}
   TunnelSegments: []
   BufferSegments: []
-  StartingGroupType: 3
+  StartingGroupType: 4
   NumSegmentsSpawned: 0
-  SpeedIncreaseInterval: 3
+  SpeedIncreaseInterval: 10
   TunnelSpeed: 10
   SpeedIncreaseAmount: 1
 --- !u!114 &6700656442924258978
@@ -98,6 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner: {fileID: 0}
-  rotationSpeed: 150
+  rotationSpeed: 180
   isRotating: 0
   RotationDirection: 0

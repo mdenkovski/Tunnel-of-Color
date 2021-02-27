@@ -9,6 +9,8 @@ public class TunnelSpawnerScript : MonoBehaviour
     [SerializeField]
     private GameObject ObstacleTunnelPrefab;
     [SerializeField]
+    private GameObject RotatingTunnelPrefab;
+    [SerializeField]
     private GameObject BufferPrefab;
 
     public List<GameObject> TunnelSegments;
@@ -63,6 +65,9 @@ public class TunnelSpawnerScript : MonoBehaviour
                 break;
             case TunnelType.White:
                 prefabToSpawn = ColorTunnelPrefab;
+                break;
+            case TunnelType.Rotating:
+                prefabToSpawn = RotatingTunnelPrefab;
                 break;
             default:
                 prefabToSpawn = ColorTunnelPrefab;

@@ -10,6 +10,8 @@ public class PlayerDetails : MonoBehaviour
 
     [SerializeField]
     private Image TargetColorImage;
+    [SerializeField]
+    private Animator UIAnimation;
 
     [SerializeField]
     private ParticleSystem PartcleEffect;
@@ -57,6 +59,7 @@ public class PlayerDetails : MonoBehaviour
         }
 
         TargetColorImage.color = ColorToUpdate;
+        UIAnimation.SetBool("IsPlaying", true);
     }
 
 

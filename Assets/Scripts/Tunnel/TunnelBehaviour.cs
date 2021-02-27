@@ -8,6 +8,7 @@ public enum TunnelType
     Buffer,
     Color,
     Obstacle,
+    Rotating,
     White,
     Random
 }
@@ -68,6 +69,10 @@ public class TunnelBehaviour : MonoBehaviour
             //set the 2 protrusions to black
             Segments[1].GetComponent<SegmentBehaviour>().SetSegmentType(SegmentType.Black);
             Segments[3].GetComponent<SegmentBehaviour>().SetSegmentType(SegmentType.Black);
+        }
+        else if (TunnelType == TunnelType.Rotating)
+        {
+            UpdateAllSegments(SegmentType.White);
         }
 
     }
