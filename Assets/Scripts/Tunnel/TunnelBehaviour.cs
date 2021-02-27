@@ -7,6 +7,7 @@ public enum TunnelType
 {
     Buffer,
     Color,
+    Obstacle,
     White,
     Random
 }
@@ -30,6 +31,7 @@ public class TunnelBehaviour : MonoBehaviour
         //a buffer section dont change anything
         if (TunnelType == TunnelType.Buffer) return;
 
+        
 
         if (TunnelType == TunnelType.Color)
         {
@@ -57,13 +59,17 @@ public class TunnelBehaviour : MonoBehaviour
 
             }
         }
-        else if (TunnelType == TunnelType.Color)
+        else if (TunnelType == TunnelType.White)
         {
             UpdateAllSegments(SegmentType.White);
         }
+        else if (TunnelType == TunnelType.Obstacle)
+        {
+            //set the 2 protrusions to black
+            Segments[1].GetComponent<SegmentBehaviour>().SetSegmentType(SegmentType.Black);
+            Segments[3].GetComponent<SegmentBehaviour>().SetSegmentType(SegmentType.Black);
+        }
 
-        
-            
     }
 
     // Update is called once per frame
@@ -85,7 +91,7 @@ public class TunnelBehaviour : MonoBehaviour
             else /*(TunnelType == TunnelType.Color) // a regular tunnel*/
             {
                 Spawner.TunnelSegments.Remove(this.gameObject);
-                Spawner.SpawnNewTunnel(TunnelType.Color);
+                Spawner.SpawnNewTunnel(TunnelType.Random);
                 Destroy(gameObject);
                 Destroy(gameObject);
             }

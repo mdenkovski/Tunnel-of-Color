@@ -61,5 +61,31 @@ public class PlayerBehavior : MonoBehaviour
         Spawner.GetComponent<PlayerInput>().DeactivateInput();
         Animator.applyRootMotion = true;
         Animator.SetBool("IsDead", true);
+        
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Obstacle"))
+        {
+            Debug.Log("Hit an Obstacle");
+            Death();
+            Animator.SetBool("HitFromFront", true);
+        }
+    }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Obstacle"))
+    //    {
+    //        Debug.Log("Hit an Obstacle");
+    //        Death();
+    //    }
+
+    //}
+
+
+   
+
 }

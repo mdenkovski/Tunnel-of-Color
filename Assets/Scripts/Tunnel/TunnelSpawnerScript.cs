@@ -5,7 +5,9 @@ using UnityEngine;
 public class TunnelSpawnerScript : MonoBehaviour
 {
     [SerializeField]
-    private GameObject TunnelPrefab;
+    private GameObject ColorTunnelPrefab;
+    [SerializeField]
+    private GameObject ObstacleTunnelPrefab;
     [SerializeField]
     private GameObject BufferPrefab;
 
@@ -38,7 +40,31 @@ public class TunnelSpawnerScript : MonoBehaviour
 
     public void SpawnNewTunnel(TunnelType newType, float distance = 100)
     {
-        GameObject tunnel = Instantiate(TunnelPrefab, new Vector3(0, 10, distance), Quaternion.Euler(0,0, 36));
+        if (newType == TunnelType.Random)
+        {
+            //choose a rnadom type between the first color type and the second last type
+            newType = (TunnelType)Random.Range(1, (int)TunnelType.Random - 1);
+        }
+
+        GameObject prefabToSpawn;
+        switch (newType)
+        {
+            
+            case TunnelType.Color:
+                prefabToSpawn = ColorTunnelPrefab;
+                break;
+            case TunnelType.Obstacle:
+                prefabToSpawn = ObstacleTunnelPrefab;
+                break;
+            case TunnelType.White:
+                prefabToSpawn = ColorTunnelPrefab;
+                break;
+            default:
+                prefabToSpawn = ColorTunnelPrefab;
+                break;
+        }
+
+        GameObject tunnel = Instantiate(prefabToSpawn, new Vector3(0, 10, distance), Quaternion.Euler(0,0, 36));
         TunnelBehaviour tunnelbehaviour = tunnel.GetComponent<TunnelBehaviour>();
         tunnelbehaviour.Spawner = this;
         tunnelbehaviour.TunnelType = newType;

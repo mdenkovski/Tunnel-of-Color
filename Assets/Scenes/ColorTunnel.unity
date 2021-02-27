@@ -633,7 +633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb197d42badd6f44a29085e466ab792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TunnelPrefab: {fileID: 767004725518939612, guid: 47fadb06eebb8924d8366c7de69a0b67, type: 3}
+  ColorTunnelPrefab: {fileID: 767004725518939612, guid: 47fadb06eebb8924d8366c7de69a0b67, type: 3}
+  ObstacleTunnelPrefab: {fileID: 1282017309857477852, guid: 8e9a7cf177caf92488646e2e16a6eaa1, type: 3}
   BufferPrefab: {fileID: 8859738399174167122, guid: 2905e7cff376ca1429e190446de342a0, type: 3}
   TunnelSegments: []
   BufferSegments: []
@@ -756,7 +757,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &1788774551
 LightingSettings:
@@ -831,13 +832,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1267104807674983143, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 2442778563355845553, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 5434314947043859150, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5434314947043859150, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
       propertyPath: m_LocalPosition.x
@@ -879,13 +884,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6051301027551230551, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6729120732666528468, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
       propertyPath: Spawner
       value: 
       objectReference: {fileID: 1502345671}
-    - target: {fileID: 7870336982700325400, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
