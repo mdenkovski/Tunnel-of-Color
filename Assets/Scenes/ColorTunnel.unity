@@ -4241,14 +4241,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1314740631, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 1314740632, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
-      propertyPath: m_ChildControlWidth
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2442778563355845553, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
@@ -4313,6 +4305,10 @@ PrefabInstance:
       propertyPath: GameOverCanvas
       value: 
       objectReference: {fileID: 976252942}
+    - target: {fileID: 6729120732666528468, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
+      propertyPath: GameOverSegmentsText
+      value: 
+      objectReference: {fileID: 888931726}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a5fd3fcb5d4fec488b7be8f211ce875, type: 3}
 --- !u!1001 &6700656444425187178

@@ -16,7 +16,9 @@ public class DifficultyIncreaser : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GetComponent<TunnelBehaviour>().Spawner.IncreaseDifficulty();
+            TunnelBehaviour tunnel = GetComponent<TunnelBehaviour>();
+            tunnel.Spawner.IncreaseDifficulty();
+            tunnel.Spawner.gameObject.GetComponent<Tunnelnput>().IncreaseRotationSpeed();
             other.gameObject.GetComponent<PlayerDetails>().AssignRandomColor();
         }
     }

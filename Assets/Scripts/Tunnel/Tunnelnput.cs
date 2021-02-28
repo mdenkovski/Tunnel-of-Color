@@ -9,7 +9,9 @@ public class Tunnelnput : MonoBehaviour
     private TunnelSpawnerScript Spawner;
 
     [SerializeField]
-    private float rotationSpeed = 10;
+    private float rotationSpeed = 180;
+    [SerializeField]
+    private float rotationSpeedIcnreaseAmount = 5;
     public bool isRotating = false;
     [SerializeField]
     private int RotationDirection = 0;
@@ -59,5 +61,11 @@ public class Tunnelnput : MonoBehaviour
                 Tunnel.transform.Rotate(0, 0, RotationDirection * rotationSpeed * Time.deltaTime);
             }
         }
+    }
+
+
+    public void IncreaseRotationSpeed()
+    {
+        rotationSpeed += 5;
     }
 }

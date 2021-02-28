@@ -99,5 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawner: {fileID: 0}
   rotationSpeed: 180
+  rotationSpeedIcnreaseAmount: 15
   isRotating: 0
   RotationDirection: 0

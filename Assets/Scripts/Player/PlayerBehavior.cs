@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class PlayerBehavior : MonoBehaviour
     private GameObject PauseCanvas;
     [SerializeField]
     private GameObject GameOverCanvas;
+    [SerializeField]
+    private TMP_Text GameOverSegmentsText;
 
 
     // Start is called before the first frame update
@@ -72,6 +75,8 @@ public class PlayerBehavior : MonoBehaviour
         Animator.SetBool("IsDead", true);
 
         GameOverCanvas.SetActive(true);
+        GameOverSegmentsText.text = PlayerDetails.NumSegmentsPassed.ToString();
+
         RunningSound.Stop();
 
     }

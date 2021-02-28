@@ -94,11 +94,8 @@ public class PlayerDetails : MonoBehaviour
     public void AssignRandomColor()
     {
         //chenge to a randome color after every 10 segments
-        if (NumSegmentsPassed % 10 == 0)
-        {
-            ChangeTagetColor((SegmentType)Random.Range(0, 4));
-            PlayParticleEffect();
-        }
+        ChangeTagetColor((SegmentType)Random.Range(0, 4));
+        PlayParticleEffect();
     }
 
 }

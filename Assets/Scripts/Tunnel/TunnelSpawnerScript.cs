@@ -150,7 +150,7 @@ public class TunnelSpawnerScript : MonoBehaviour
     {
         TunnelSpeed += SpeedIncreaseAmount;
         IncreaseSpeed();
-        Debug.Log("Speed Increased");
+        //Debug.Log("Speed Increased");
     }
 
 }
