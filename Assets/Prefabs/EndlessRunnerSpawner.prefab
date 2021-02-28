@@ -54,7 +54,7 @@ MonoBehaviour:
   BufferSegments: []
   StartingGroupType: 5
   TunnelSpeed: 10
-  SpeedIncreaseAmount: 3
+  SpeedIncreaseAmount: 2
 --- !u!114 &6700656442924258978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +99,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawner: {fileID: 0}
   rotationSpeed: 180
-  rotationSpeedIcnreaseAmount: 15
   isRotating: 0
   RotationDirection: 0

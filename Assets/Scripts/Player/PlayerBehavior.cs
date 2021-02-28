@@ -12,7 +12,10 @@ public class PlayerBehavior : MonoBehaviour
     private Transform GroundTraceLocation;
     [SerializeField]
     private LayerMask GroundLayer;
-
+    [SerializeField]
+    private SegmentType CurrentSegment;
+    [SerializeField]
+    private ParticleSystem GroundTrail;
 
     [Header("Tunnel")]
     [SerializeField]
@@ -43,6 +46,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         PlayerDetails = GetComponent<PlayerDetails>();
         Animator = GetComponent<Animator>();
+        GroundTrail = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -57,7 +61,12 @@ public class PlayerBehavior : MonoBehaviour
 
         if (PlayerDetails.TargetSegment == HitSegment.SegmentType || HitSegment.SegmentType == SegmentType.White || PlayerDetails.TargetSegment == SegmentType.White)
         {
-            //Debug.Log("Safe");
+            if (HitSegment.SegmentType != CurrentSegment)
+            {
+                var main = GroundTrail.main;
+                main.startColor = hit.collider.gameObject.GetComponent<MeshRenderer>().material.color;
+                CurrentSegment = HitSegment.SegmentType;
+            }
         }
         else
         {
