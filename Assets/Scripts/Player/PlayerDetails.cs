@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerDetails : MonoBehaviour
 {
@@ -19,9 +20,15 @@ public class PlayerDetails : MonoBehaviour
     [SerializeField]
     private AudioSource PowerupSound;
 
+    public int NumSegmentsPassed = 0;
+
+    [SerializeField]
+    private TMP_Text NumSegemntsText;
+
     private void Start()
     {
-        UpdateColorUI(TargetSegment);
+        UpdateColorUI(TargetSegment, false);
+        UpdateScoreUI();
     }
 
     public void ChangeTagetColor(SegmentType newtarget)
@@ -31,7 +38,7 @@ public class PlayerDetails : MonoBehaviour
         UpdateColorUI(newtarget);
     }
 
-    private void UpdateColorUI(SegmentType newtarget)
+    private void UpdateColorUI(SegmentType newtarget, bool animated = true)
     {
         Color ColorToUpdate;
 
@@ -61,7 +68,7 @@ public class PlayerDetails : MonoBehaviour
         }
 
         TargetColorImage.color = ColorToUpdate;
-        UIAnimation.SetBool("IsPlaying", true);
+        UIAnimation.SetBool("IsPlaying", animated);
     }
 
 
@@ -69,6 +76,28 @@ public class PlayerDetails : MonoBehaviour
     {
         PartcleEffect.Play();
         PowerupSound.Play();
+    }
+
+    public void IncreaseSegmentsPassed()
+    {
+        NumSegmentsPassed++;
+        UpdateScoreUI();
+
+        
+    }
+
+    private void UpdateScoreUI()
+    {
+        NumSegemntsText.text = NumSegmentsPassed.ToString();
+    }
+
+    public void AssignRandomColor()
+    {
+        //chenge to a randome color after every 10 segments
+        if (NumSegmentsPassed % 10 == 0)
+        {
+            ChangeTagetColor((SegmentType)Random.Range(0, 4));
+        }
     }
 
 }

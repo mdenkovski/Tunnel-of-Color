@@ -1260,8 +1260,10 @@ GameObject:
   m_Component:
   - component: {fileID: 767004725518939615}
   - component: {fileID: 5336787500431037149}
+  - component: {fileID: 3711991977871103509}
+  - component: {fileID: 2211080053738669633}
   m_Layer: 0
-  m_Name: RootCylinder
+  m_Name: RootColorCylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1308,3 +1310,28 @@ MonoBehaviour:
   - {fileID: 767004724323921639}
   TunnelType: 1
   IsActive: 1
+--- !u!65 &3711991977871103509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767004725518939612}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 1}
+  m_Center: {x: 0, y: 0, z: 50}
+--- !u!114 &2211080053738669633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767004725518939612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0773a2ebc68b4a48bb7a39a7a0ea3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

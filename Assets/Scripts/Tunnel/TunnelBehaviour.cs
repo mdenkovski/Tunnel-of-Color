@@ -9,6 +9,7 @@ public enum TunnelType
     Color,
     Obstacle,
     Rotating,
+    DifficultyIncrease,
     White,
     Random
 }
@@ -76,6 +77,13 @@ public class TunnelBehaviour : MonoBehaviour
             float roll = Random.Range(0.0f, 100.0f);
 
             GetComponent<Animator>().SetInteger("Direction", roll < 50.0f ? -1 : 1);
+        }
+        else if (TunnelType == TunnelType.DifficultyIncrease)
+        {
+            foreach (var segment in Segments)
+            {
+                segment.GetComponent<SegmentBehaviour>().SegmentType = SegmentType.White;
+            }
         }
 
     }

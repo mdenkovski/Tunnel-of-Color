@@ -14,14 +14,12 @@ public class ItemSpawner : MonoBehaviour
 
 
 
-
     // Start is called before the first frame update
     void Start()
     {
         foreach (GameObject Location in ItemSpawnLocations)
         {
-            GameObject newItem = Instantiate(ItemsToSpawn[Random.Range(0, ItemsToSpawn.Length)], Location.transform, false);
-            //newItem.
+            Instantiate(ItemsToSpawn[Random.Range(0, ItemsToSpawn.Length)], Location.transform, false);
         }
     }
 

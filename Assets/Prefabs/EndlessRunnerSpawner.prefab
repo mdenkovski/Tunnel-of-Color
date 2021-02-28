@@ -48,14 +48,13 @@ MonoBehaviour:
   ColorTunnelPrefab: {fileID: 767004725518939612, guid: 47fadb06eebb8924d8366c7de69a0b67, type: 3}
   ObstacleTunnelPrefab: {fileID: 1282017309857477852, guid: 8e9a7cf177caf92488646e2e16a6eaa1, type: 3}
   RotatingTunnelPrefab: {fileID: 6017391798297179710, guid: 5ca41ac4ef70ce644a063beaedb6f0f0, type: 3}
+  DifficultyInceaseTunnelPrefab: {fileID: 6848224395857678173, guid: 2995300f8f96567499123860a431b6be, type: 3}
   BufferPrefab: {fileID: 8859738399174167122, guid: 2905e7cff376ca1429e190446de342a0, type: 3}
   TunnelSegments: []
   BufferSegments: []
-  StartingGroupType: 4
-  NumSegmentsSpawned: 0
-  DifficultyChangeInterval: 5
+  StartingGroupType: 5
   TunnelSpeed: 10
-  SpeedIncreaseAmount: 1
+  SpeedIncreaseAmount: 3
 --- !u!114 &6700656442924258978
 MonoBehaviour:
   m_ObjectHideFlags: 0

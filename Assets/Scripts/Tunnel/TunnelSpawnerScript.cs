@@ -11,6 +11,8 @@ public class TunnelSpawnerScript : MonoBehaviour
     [SerializeField]
     private GameObject RotatingTunnelPrefab;
     [SerializeField]
+    private GameObject DifficultyInceaseTunnelPrefab;
+    [SerializeField]
     private GameObject BufferPrefab;
 
     public List<GameObject> TunnelSegments;
@@ -20,10 +22,6 @@ public class TunnelSpawnerScript : MonoBehaviour
     private TunnelType StartingGroupType;
 
     [Header("Tunnel Movement")]
-    [SerializeField]
-    private int NumSegmentsSpawned;
-    [SerializeField]
-    private int DifficultyChangeInterval;
     [SerializeField]
     private float TunnelSpeed;
     [SerializeField]
@@ -64,10 +62,16 @@ public class TunnelSpawnerScript : MonoBehaviour
             {
                 newType = TunnelType.Obstacle;
             }
+            else if (roll < 30)
+            {
+                newType = TunnelType.DifficultyIncrease;
+            }
             else //color tunnel is the most often
             {
                 newType = TunnelType.Color;
             }
+
+            newType = TunnelType.DifficultyIncrease;
 
         }
 
@@ -88,6 +92,9 @@ public class TunnelSpawnerScript : MonoBehaviour
             case TunnelType.Rotating:
                 prefabToSpawn = RotatingTunnelPrefab;
                 break;
+            case TunnelType.DifficultyIncrease:
+                prefabToSpawn = DifficultyInceaseTunnelPrefab;
+                break;
             default:
                 prefabToSpawn = ColorTunnelPrefab;
                 break;
@@ -101,14 +108,7 @@ public class TunnelSpawnerScript : MonoBehaviour
         tunnelbehaviour.UpdateSpeed(TunnelSpeed);
         TunnelSegments.Add(tunnel);
 
-        NumSegmentsSpawned++;
-
-        if (NumSegmentsSpawned >= DifficultyChangeInterval)
-        {
-            IncreaseDifficulty();
-
-            
-        }
+        
     }
 
     public void SpawnNewBuffer(float distance = 100)
@@ -148,11 +148,10 @@ public class TunnelSpawnerScript : MonoBehaviour
         }
     }
 
-    private void IncreaseDifficulty()
+    public void IncreaseDifficulty()
     {
-        TunnelSpeed += 1;
+        TunnelSpeed += SpeedIncreaseAmount;
         IncreaseSpeed();
-        NumSegmentsSpawned = 0;
         Debug.Log("Speed Increased");
     }
 
