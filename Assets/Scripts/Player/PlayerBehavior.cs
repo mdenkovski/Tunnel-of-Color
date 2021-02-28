@@ -34,6 +34,8 @@ public class PlayerBehavior : MonoBehaviour
     private GameObject GameOverCanvas;
     [SerializeField]
     private TMP_Text GameOverSegmentsText;
+    [SerializeField]
+    private GameObject InGameScoreText;
 
 
     // Start is called before the first frame update
@@ -79,6 +81,7 @@ public class PlayerBehavior : MonoBehaviour
 
         RunningSound.Stop();
 
+        InGameScoreText.SetActive(false);
     }
 
 
