@@ -22,8 +22,7 @@ public class TunnelSpawnerScript : MonoBehaviour
     private TunnelType StartingGroupType;
 
     [Header("Tunnel Movement")]
-    [SerializeField]
-    private float TunnelSpeed;
+    public float TunnelSpeed;
     [SerializeField]
     private float SpeedIncreaseAmount;
 
@@ -149,8 +148,14 @@ public class TunnelSpawnerScript : MonoBehaviour
     public void IncreaseDifficulty()
     {
         TunnelSpeed += SpeedIncreaseAmount;
+        GetComponent<Tunnelnput>().UpdateRotationSpeed();
+
+
+        //apply the speed change to the segments
         IncreaseSpeed();
         //Debug.Log("Speed Increased");
     }
+
+
 
 }
