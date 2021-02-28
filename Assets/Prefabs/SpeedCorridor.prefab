@@ -4732,6 +4732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 585590696429308146}
   - component: {fileID: 3521460374246888424}
+  - component: {fileID: 5979109685900927105}
   m_Layer: 0
   m_Name: SpeedCorridor
   m_TagString: Untagged
@@ -4774,6 +4775,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5979109685900927105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585590696429308145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49450834d08f23f43b5d1edccf469e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &585590696487898576
 GameObject:
   m_ObjectHideFlags: 0

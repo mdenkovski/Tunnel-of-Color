@@ -71,8 +71,6 @@ public class TunnelSpawnerScript : MonoBehaviour
                 newType = TunnelType.Color;
             }
 
-            newType = TunnelType.DifficultyIncrease;
-
         }
 
         //chose the prefab to spawn based on the new type

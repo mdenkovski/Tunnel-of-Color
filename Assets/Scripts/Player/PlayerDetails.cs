@@ -97,6 +97,7 @@ public class PlayerDetails : MonoBehaviour
         if (NumSegmentsPassed % 10 == 0)
         {
             ChangeTagetColor((SegmentType)Random.Range(0, 4));
+            PlayParticleEffect();
         }
     }
 
